@@ -120,5 +120,5 @@ for $x (0 ... $x_max+2) {
 }
 print "\n";
 
-print "\n";
 print "Shortest path: ", $path{"$y_start,$x_start"}, "\n";
+
