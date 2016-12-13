@@ -69,13 +69,14 @@ while ($cont == 1) {
 
     for $c (@cand) {
       ($y,$x) = split(/,/, $c);
-      print "Examine candidate: $x,$y: ", $path{"$y,$x"}, ": ";
+      print "Examine candidate: $y,$x: ", $path{"$y,$x"}, ": ";
       if ($x < 0 or $y < 0 or $x >= $x_max or $y > $y_max) {
+        print "out of bounds\n";
         next;
       }
       if ($floor[$y][$x] eq "#") {
-        $floor[$y][$x] = "!";
         print "wall\n";
+        $floor[$y][$x] = "!";
         next;
       }
       if ($floor[$y][$x] eq "!") {
